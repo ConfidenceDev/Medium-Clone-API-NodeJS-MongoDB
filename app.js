@@ -15,16 +15,12 @@ app.use(cors())
 connect()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, "public")))
-
-app.set("views", path.join(__dirname, "views"))
-app.set("view engine", "ejs")
 app.use(`${process.env.API}`, admin)
 app.use(`${process.env.API}`, user)
 app.use(`${process.env.API}`, category)
 
 app.get("/", (req, res) => {
-  res.render("index.html")
+  res.sendFile(__dirname + "/views/index.html")
 })
 
 app.listen(PORT, () => console.log(`Server runing on port: ${PORT}`))

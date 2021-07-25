@@ -68,7 +68,7 @@ function checks(req, res, next) {
 
 router.post("/users/posts/", verifyToken, checks, async (req, res) => {
   authJwt(req.token)
-    .then(() => {
+    .then(async () => {
       if (isSuspended) {
         res.status(401).json({
           status: "suspended",
