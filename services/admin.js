@@ -1,7 +1,7 @@
 async function create(Admin, obj) {
   try {
     return new Promise(async (resolve, reject) => {
-      const password = await bcrypt.hash(req.obj.password, 10)
+      const password = await bcrypt.hash(obj.password, 10)
       const user = {
         admin_id: obj.admin_id,
         email: obj.email,
