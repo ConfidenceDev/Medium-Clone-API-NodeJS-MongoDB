@@ -11,7 +11,9 @@ A simple Medium Clone API on NodeJs with MongoDB, Multer and Cloudinary
 * Front End: See the <a href="https://github.com/Dev-Geek/Medium-Clone-API-NodeJS-MongoDB/blob/main/doc/Medium%20Clone%20API%20Guide.pdf" target="_blank">API Doc</a>
 
 # Contributors
-* [![](https://github.com/remarkablemark.png?size=50)](https://github.com/Medium-Clon/medium)
+<a href="https://github.com/Tronixtek" target="_blank">
+  <img src="https://avatars.githubusercontent.com/u/58108660?v=4?size=50">
+</a>
 
 # Contact
 For inquires, support, bug reports and suggestions send me a mail@: confidostic3@gmail.com
