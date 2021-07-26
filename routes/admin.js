@@ -10,6 +10,7 @@ const {
   deletePost,
   suspendUser,
   deleteUser,
+  banishUser,
 } = require("../controllers/admin")
 const { verifyToken, authJwt } = require("../utils/jwt")
 
@@ -128,6 +129,23 @@ router.delete("/admin/:userId", verifyToken, async (req, res) => {
     .then((authData) => {
       if (authData.isAdmin) {
         deleteUser(req.params.userId, res)
+      } else {
+        res.status(401).json({
+          status: "error",
+          error: "You are not an admin",
+        })
+      }
+    })
+    .catch((err) => {
+      res.status(403).json({ err })
+    })
+})
+
+router.delete("/admin/:userId", verifyToken, async (req, res) => {
+  authJwt(req.token)
+    .then((authData) => {
+      if (authData.isAdmin) {
+        banishUser(req.params.userId, res)
       } else {
         res.status(401).json({
           status: "error",
