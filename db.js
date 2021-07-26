@@ -8,7 +8,7 @@ exports.connect = async () => {
 
       mockgoose.prepareStorage().then(() => {
         mongoose
-          .connect(process.env.API_URL, {
+          .connect(process.env.LOCAL_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true,
@@ -20,7 +20,7 @@ exports.connect = async () => {
       })
     } else {
       await mongoose
-        .connect(process.env.API_URL, {
+        .connect(process.env.LOCAL_URL, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
           useCreateIndex: true,

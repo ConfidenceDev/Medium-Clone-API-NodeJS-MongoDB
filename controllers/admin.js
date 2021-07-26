@@ -2,7 +2,7 @@ const { postData } = require("../utils/postData")
 const { create, fetch, fetchAt, reports } = require("../services/admin")
 const { Admin } = require("../schema/admin")
 const { Users } = require("../schema/users")
-const { Post } = require("../schema/posts")
+const { Posts } = require("../schema/posts")
 const { Report } = require("../schema/reports")
 const { Banish } = require("../schema/banish")
 const mongoose = require("mongoose")
@@ -151,7 +151,7 @@ async function deletePost(postId, res) {
       return res.status(400).json({ msg: "User does not exist!" })
     } else {
       const query = { _id: postId }
-      Post.deleteOne(query, (err, data) => {
+      Posts.deleteOne(query, (err, data) => {
         if (err) {
           console.log(err)
           res.status(401).json({ msg: "Post not found" })
