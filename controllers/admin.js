@@ -4,6 +4,7 @@ const { Admin } = require("../schema/admin")
 const { Users } = require("../schema/users")
 const { Post } = require("../schema/posts")
 const { Report } = require("../schema/reports")
+const { Banish } = require("../schema/banish")
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -205,6 +206,39 @@ async function deleteUser(userId, res) {
   }
 }
 
+//@desc     Banish a user
+//@method   DELETE
+async function banishUser(userId, res) {
+  try {
+    if (!mongoose.isValidObjectId(userId)) {
+      return res.status(400).json({ msg: "User does not exist!" })
+    } else {
+      const query = { _id: userId }
+      Users.deleteOne(query, (err, data) => {
+        if (err) {
+          console.log(err)
+          res.status(401).json({ msg: "User not found" })
+        }
+
+        console.log(data)
+        //res.status(200).json({ msg: "User has been banished", data })
+
+        /*await new Banish(data.email)
+          .save()
+          .then(() => {
+            console.log("Banihed a user")
+            res.status(200).json({ msg: "User has been banished" })
+          })
+          .catch((err) => {
+            res.status(403).json({ msg: "An error occured" })
+          })*/
+      })
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   createAdmin,
   loginAdmin,
@@ -215,4 +249,5 @@ module.exports = {
   deletePost,
   suspendUser,
   deleteUser,
+  banishUser,
 }
