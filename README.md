@@ -12,7 +12,8 @@ A simple Medium Clone API on NodeJs with MongoDB, Multer and Cloudinary
 
 # Contributors
 <a href="https://github.com/Tronixtek" target="_blank">
-  <img src="https://avatars.githubusercontent.com/u/58108660?v=4?size=50" width="50" height="50">
+  <img src="https://avatars.githubusercontent.com/u/58108660?v=4?size=50" width="50" height="50" style="border-radius: 50%"><br>
+  <label>Victor Francis</label>
 </a>
 
 # Contact
