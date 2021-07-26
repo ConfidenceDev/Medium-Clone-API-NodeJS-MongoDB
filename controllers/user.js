@@ -13,7 +13,7 @@ const {
   comment,
   update,
   report,
-} = require("../models/user")
+} = require("../services/user")
 const mongoose = require("mongoose")
 
 //@desc     Create a new user

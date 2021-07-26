@@ -1,5 +1,5 @@
 const { postData } = require("../utils/postData")
-const { create, fetch, fetchAt, reports } = require("../models/admin")
+const { create, fetch, fetchAt, reports } = require("../services/admin")
 const { Admin } = require("../schema/admin")
 const { Users } = require("../schema/users")
 const { Post } = require("../schema/posts")
