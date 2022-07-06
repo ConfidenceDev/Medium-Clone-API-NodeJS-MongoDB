@@ -6,7 +6,7 @@ A simple Medium Clone API on NodeJs with MongoDB, Multer and Cloudinary
 
 # How to Use
 * Clone or Download repo
-* Run: npm install 
+* Run: `npm install` 
 * Edit .env file with your Urls and Keys
 * Front End: See the <a href="https://github.com/Dev-Geek/Medium-Clone-API-NodeJS-MongoDB/blob/main/doc/Medium%20Clone%20API%20Guide.pdf" target="_blank">API Doc</a>
 
